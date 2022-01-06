@@ -14,26 +14,51 @@
         <h1>Formulaire d’inscription</h1>
     </header>
     <main>
-        <h2>Informations Personnel:</h2>
+        <h2>Informations Personnel</h2>
         <form method="post">
-            <label>Nom</label> : <input type="text" name="Nom" />
-            <label>Prenom</label> : <input type="text" name="Prenom" />
-            <label>Age</label> : <input type="text" name="Age" />
-            <label>Date de naissance</label> : <input type="text" name="Date de naissance" />
-            <label>Sex</label> : <input type="text" name="Sex" />
-            <label>Métier exercé</label> : <input type="text" name="Métier exercé" />
-            <h2>Vos Coordonnées :</h2>
-            <label>Adresse mail</label> : <input type="text" name="Adresse mail" />
-            <label>Adresse postale</label> : <input type="text" name="Adresse postale" />
-            <label>Ville</label> : <input type="text" name="Ville" />
-            <label>Code postale</label> : <input type="text" name="Code postale" />
-            <h2>Autres Informations :</h2>
-            <label>Nationalité</label> : <input type="text" name="Nationalité" />
-            <label>Pay de naissance</label> : <input type="text" name="Pay de naissance" />
-            <label>Numéro de sécurité social</label> : <input type="text" name="Numéro de sécurité social" />
-            <label>Numéro du passeport</label> : <input type="text" name="Numéro du passeport" />
-            <label>Date de délivrance du passeport</label> : <input type="text" name="Date de délivrance du passeport" />
-            <label>Date de validité du passeport</label> : <input type="text" name="Date de validité du passeport" />
+            <label>Nom</label> <input type="text" name="Nom" required />
+            <label>Prenom</label> <input type="text" name="Prenom" required />
+            <label>Age</label> <input type="number" name="Age" required />
+            <label>Date de naissance</label> <input type="date" name="Date de naissance" required />
+            <div>
+                <label>Homme</label> <input type="radio" name="Sexe" />
+                <label>Femme</label> <input type="radio" name="Sexe" />
+                <label>Autre</label> <input type="radio" name="Sexe" />
+            </div>
+            <label>Métier exercé</label> <input type="text" name="Métier exercé" required />
+            <h2>Vos Coordonnées </h2>
+            <label>Adresse mail</label> <input type="email" name="Adresse mail" required />
+            <label>Adresse postale</label> <input type="text" name="Adresse postale" required />
+            <label>Ville</label> <input type="text" name="Ville" required />
+            <label>Code postale</label> <input type="text" name="Code postale" pattern="[0-9]{5}" required />
+            <h2>Autres Informations</h2>
+            <label>Nationalité</label>
+            <select name="nationalite">
+                <option value="fr">Française</option>
+                <option value="ar">Argentine</option>
+                <option value="al">Allemand</option>
+                <option value="es">Espagnol</option>
+            </select>
+            <label>Pay de naissance</label>
+            <select name="pdn" required>
+                <option value="">Pays</option>
+                <option value="">France</option>
+                <option value="">Argentine</option>
+                <option value="">Allemagne</option>
+                <option value="">Espagne</option>
+                <option value="">Italien</option>
+            </select>
+            <label>Numéro de sécurité social</label> <input type="text" name="Numéro de sécurité social" required />
+            <label for="ndpf">Numéro du passeport français :</label>
+            <input type="text" placeholder="00AA00000" pattern="[0-9]{2}[A-Z]{2}[0-9]{5}" required>
+            <small>Format : 12FR12345</small> <br>
+            <label for="ndpb">Numéro de passeport Belge :</label>
+            <input type="text" placeholder="BE123456" pattern="[A-Z]{2}[0-9]{6}" required>
+            <small>Format : BE123456</small> <br>
+            <label for="DDP">Date de délivrance du passeport :</label>
+            <input type="date" name="DDP" required> <br>
+            <label for="DVP">Date de validité du passeport :</label>
+            <input type="date" name="DVP" required>
         </form>
     </main>
     <footer>
